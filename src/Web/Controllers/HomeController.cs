@@ -4,9 +4,9 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Welcom!\nThis page in development.";
+            return View();
         }
     }
 }
