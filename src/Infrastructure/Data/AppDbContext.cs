@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.Entities;
+using Infrastructure.Data.Config;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
@@ -20,6 +21,13 @@ namespace Infrastructure.Data
                     @"Server=DESKTOP-C2PJVTF\DEV;Database=CRM;Trusted_Connection=True;MultipleActiveResultSets=true",
                     options => options.EnableRetryOnFailure());
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new DarkstoreConfiguration());
         }
     }
 }
