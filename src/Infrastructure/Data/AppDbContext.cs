@@ -29,6 +29,7 @@ namespace Infrastructure.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new DarkstoreConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
         }
     }
 }
