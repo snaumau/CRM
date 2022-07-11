@@ -1,4 +1,14 @@
+using ApplicationCore.Interfaces;
+using Infrastructure.Data;
+using Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DevelopmentConnection")));
+
+builder.Services.AddScoped<IDarkstoreRepository, DarkstoreRepository>();
 
 builder.Services.AddControllersWithViews();
 
