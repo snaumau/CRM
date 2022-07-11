@@ -9,8 +9,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DevelopmentConnection")));
 
 builder.Services.AddScoped<IDarkstoreRepository, DarkstoreRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
