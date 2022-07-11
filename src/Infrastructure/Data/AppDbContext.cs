@@ -12,6 +12,7 @@ namespace Infrastructure.Data
         }
 
         public DbSet<Darkstore>? Darkstores { get; set; }
+        public DbSet<Employee>? Employees { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
