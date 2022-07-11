@@ -4,6 +4,6 @@ namespace ApplicationCore.Interfaces
 {
     public interface IEmployeeRepository
     {
-        public IQueryable<Employee> Employees { get; }
+        public IQueryable<Employee>? Employees { get; }
     }
 }
