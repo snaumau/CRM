@@ -1,0 +1,16 @@
+﻿@model EmployeeListViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Position</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Account Number</th>
+        </tr>
+    </thead>
+    @foreach (var employee in Model.Employees)
+    {
+        <partial name="_EmployeeList" model="employee" />
+    }
+</table>
