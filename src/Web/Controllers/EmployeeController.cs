@@ -28,11 +28,9 @@ namespace Web.Controllers
             }
             else
             {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
                 employees = _employeeRepository.Employees?
                     .Where(e => e.Darkstore.Name == darkstore)
                     .OrderBy(e => e.Id);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
                 currentDarkstore = _darkstoreRepository.AllDarkstores?
                     .FirstOrDefault(d => d.Name == darkstore)?.Name;
             }
