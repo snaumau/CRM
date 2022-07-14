@@ -1,2 +1,8 @@
-﻿<h2>Welcome!</h2>
-<p>This page in development</p>
+﻿@model HomeViewModel
+
+<div class="row">
+    @foreach (var darkstore in Model.AllDarkstores)
+    {
+        <partial name="_DarkstoreList" model="darkstore" />
+    }
+</div>
