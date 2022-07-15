@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Darkstore>
+
+<div class="btn-group">
+    <button type="button" class="btn">
+        <a asp-controller="Employee" asp-action="List" asp-route-Darkstore="">All Darkstores</a>
+    </button>
+    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (var darkstore in Model)
+        {
+            <li>
+                <a class="dropdown-item" asp-controller="Employee" asp-action="List" asp-route-currentDarkstore="@darkstore.Name">@darkstore.Name</a>
+            </li>
+        }
+    </ul>
+</div>
