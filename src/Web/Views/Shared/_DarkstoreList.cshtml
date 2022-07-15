@@ -3,6 +3,6 @@
 <div class="card w-50">
     <div class="card-body">
         <h5 class="card-title" asp-controller="Home">@Model.Name</h5>
-        <a href="#" class="btn btn-primary">Go to employees</a>
+        <a asp-controller="Employee" asp-action="List" asp-route-currentDarkstore="@Model.Name" class="btn btn-primary">Go to employees</a>
     </div>
 </div>
