@@ -16,23 +16,23 @@ namespace Web.Controllers
             _darkstoreRepository = darkstoreRepository;
         }
 
-        public ViewResult List(string darkstore)
+        public ViewResult List(string? currentDarkstore)
         {
             IQueryable<Employee>? employees;
-            string? currentDarkstore;
-            if (string.IsNullOrEmpty(darkstore))
+
+            if (string.IsNullOrEmpty(currentDarkstore))
             {
                 employees = _employeeRepository.Employees?
                     .OrderBy(d => d.Id);
-                currentDarkstore = "AllDarkstores";
+                currentDarkstore = "All darkstores";
             }
             else
             {
                 employees = _employeeRepository.Employees?
-                    .Where(e => e.Darkstore.Name == darkstore)
+                    .Where(e => e.Darkstore.Name == currentDarkstore)
                     .OrderBy(e => e.Id);
                 currentDarkstore = _darkstoreRepository.AllDarkstores?
-                    .FirstOrDefault(d => d.Name == darkstore)?.Name;
+                    .FirstOrDefault(d => d.Name == currentDarkstore)?.Name;
             }
 
             return View(new EmployeeListViewModel
