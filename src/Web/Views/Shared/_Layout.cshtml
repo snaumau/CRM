@@ -33,7 +33,7 @@
                         </li>
                         @await Component.InvokeAsync("DarkstoreMenu")
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" asp-controller="Employee" asp-action="List">
                                 <span data-feather="employees"></span>
                                 Employees
                             </a>
