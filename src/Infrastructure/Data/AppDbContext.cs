@@ -31,6 +31,7 @@ namespace Infrastructure.Data
 
             modelBuilder.ApplyConfiguration(new DarkstoreConfiguration());
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+            modelBuilder.ApplyConfiguration(new RateConfiguration());
         }
     }
 }
