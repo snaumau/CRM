@@ -4,6 +4,6 @@ namespace ApplicationCore.Interfaces
 {
     public interface IRateRepository
     {
-        public IEnumerable<Rate>? AllRates { get; set; }
+        IEnumerable<Rate>? AllRates { get; }
     }
 }
